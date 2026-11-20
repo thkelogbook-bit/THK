@@ -1,0 +1,464 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F4F3F4CD-9C54-4C8C-BA5D-CA1CAF67D93D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Elogbook.Api</RootNamespace>
+    <AssemblyName>Elogbook.Api</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress>
+    </Use64BitIISExpress>
+    <IISExpressSSLPort>44385</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SonarQubeExclude>True</SonarQubeExclude>
+    <SonarQubeTestProject>
+    </SonarQubeTestProject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>bin\Elogbook.Api.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Elogbook.Api.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.9.4.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.9.4\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Extras.Quartz, Version=4.6.0.0, Culture=neutral, PublicKeyToken=595f708ada5feacc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Extras.Quartz.4.6.0\lib\net452\Autofac.Extras.Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=4.3.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.4.3.1\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.System.Runtime">
+      <HintPath>..\Library\Core.System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.Autofac, Version=2.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.Autofac.2.6.0\lib\net45\Hangfire.Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.Core, Version=1.8.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.Core.1.8.12\lib\net46\Hangfire.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.SqlServer, Version=1.8.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.SqlServer.1.8.12\lib\net451\Hangfire.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.WebApi.Versioning, Version=4.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Versioning.4.1.1\lib\net45\Microsoft.AspNet.WebApi.Versioning.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.WebApi.Versioning.ApiExplorer, Version=4.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Versioning.ApiExplorer.4.1.1\lib\net45\Microsoft.AspNet.WebApi.Versioning.ApiExplorer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.12.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.6.12.2\lib\net45\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.12.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.6.12.2\lib\net45\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.12.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.6.12.2\lib\net45\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.2.2\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.2.2\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz, Version=3.0.7.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Quartz.3.0.7\lib\net452\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.12.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.6.12.2\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Text.Encoding.CodePages, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.5.0.0\lib\net46\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="ViettelFileSigner">
+      <HintPath>..\Library\ViettelFileSigner.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\Library\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Notes.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CronJobTranslateDescription\netstandard1.1\CronExpressionDescriptor.dll" />
+    <Content Include="CronJobTranslateDescription\netstandard1.1\CronExpressionDescriptor.pdb" />
+    <Content Include="CronJobTranslateDescription\netstandard1.1\vi\CronExpressionDescriptor.resources.dll" />
+    <Content Include="CronJobTranslateDescription\netstandard2.0\CronExpressionDescriptor.dll" />
+    <Content Include="CronJobTranslateDescription\netstandard2.0\CronExpressionDescriptor.pdb" />
+    <Content Include="CronJobTranslateDescription\netstandard2.0\vi\CronExpressionDescriptor.resources.dll" />
+    <Content Include="Global.asax" />
+    <Content Include="Icon\docs.png" />
+    <Content Include="Icon\Icon-EVN-PhuMy.PNG" />
+    <Content Include="Icon\video-icon.png" />
+    <Content Include="Icon\VINH-TAN-LOGO.PNG" />
+    <Content Include="PMIS.txt" />
+    <Content Include="Properties\PublishProfiles\FolderProfile.pubxml.user" />
+    <Content Include="Readme.txt" />
+    <Content Include="vi\CronExpressionDescriptor.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="vnpt_dll\itextsharp.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BaseApiController.cs" />
+    <Compile Include="Controllers\V1\AmDeviceController.cs" />
+    <Compile Include="Controllers\V1\AmCountryManufactureController.cs" />
+    <Compile Include="Controllers\V1\AmManufacturerController.cs" />
+    <Compile Include="Controllers\V1\AmSupplierController.cs" />
+    <Compile Include="Controllers\V1\AmEmergencyController.cs" />
+    <Compile Include="Controllers\V1\AmMaintenanceScheduleController.cs" />
+    <Compile Include="Controllers\V1\AmReasonForStopController.cs" />
+    <Compile Include="Controllers\V1\AmReasonForPendingController.cs" />
+    <Compile Include="Controllers\V1\AmReportController.cs" />
+    <Compile Include="Controllers\V1\AmWorkController.cs" />
+    <Compile Include="Controllers\V1\AmWorkTypeController.cs" />
+    <Compile Include="Controllers\V1\AuthenticationController.cs" />
+    <Compile Include="Controllers\V1\AuthController.cs" />
+    <Compile Include="Controllers\V1\AutonomousMaintenanceController.cs" />
+    <Compile Include="Controllers\V1\BatchWorkRegController.cs" />
+    <Compile Include="Controllers\V1\CommonController.cs" />
+    <Compile Include="Controllers\V1\ActiveDirectoryController.cs" />
+    <Compile Include="Controllers\V1\DashboardModuleController.cs" />
+    <Compile Include="Controllers\V1\ExcelExportController.cs" />
+    <Compile Include="Controllers\V1\HazardsAndSafetyMeasuresController.cs" />
+    <Compile Include="Controllers\V1\InspectionReportController.cs" />
+    <Compile Include="Controllers\V1\KnowledgeBaseAiController.cs" />
+    <Compile Include="Controllers\V1\LuceneSearchController.cs" />
+    <Compile Include="Controllers\V1\MajorRepairController.cs" />
+    <Compile Include="Controllers\V1\AmDeviceTypeController.cs" />
+    <Compile Include="Controllers\V1\AmLocationController.cs" />
+    <Compile Include="Controllers\V1\AMMobileSyncDataController.cs" />
+    <Compile Include="Controllers\V1\RegistrationWorkPermitController.cs" />
+    <Compile Include="Controllers\V1\ScheduleController.cs" />
+    <Compile Include="Controllers\V1\PmisController.cs" />
+    <Compile Include="Controllers\V1\GuestUserController.cs" />
+    <Compile Include="Controllers\V1\FileManagementController.cs" />
+    <Compile Include="Controllers\V1\IssueOfShiftManagementController.cs" />
+    <Compile Include="Controllers\V1\ManipulationWebController.cs" />
+    <Compile Include="Controllers\V1\OperationCrewController.cs" />
+    <Compile Include="Controllers\V1\OperationDiaryController.cs" />
+    <Compile Include="Controllers\V1\OperationParametersController.cs" />
+    <Compile Include="Controllers\V1\OperationPositionController.cs" />
+    <Compile Include="Controllers\V1\OrganizationController.cs" />
+    <Compile Include="Controllers\V1\ParameterController.cs" />
+    <Compile Include="Controllers\V1\ParameterGroupController.cs" />
+    <Compile Include="Controllers\V1\PositionInShiftController.cs" />
+    <Compile Include="Controllers\V1\CycleManagementController.cs" />
+    <Compile Include="Controllers\V1\EmailTemplateController.cs" />
+    <Compile Include="Controllers\V1\PowerUnitController.cs" />
+    <Compile Include="Controllers\V1\FactoryController.cs" />
+    <Compile Include="Controllers\V1\OperationShiftController.cs" />
+    <Compile Include="Controllers\V1\RegistrationManipulationController.cs" />
+    <Compile Include="Controllers\V1\EmailConfigurationController.cs" />
+    <Compile Include="Controllers\V1\SlaConfigController.cs" />
+    <Compile Include="Controllers\V1\SystemConfigurationController.cs" />
+    <Compile Include="Controllers\V1\TicketEventController.cs" />
+    <Compile Include="Controllers\V1\UserController.cs" />
+    <Compile Include="Controllers\V1\KnowledgeBaseController.cs" />
+    <Compile Include="Controllers\V1\OpenNotebookController.cs" />
+    <Compile Include="Controllers\V1\UserGroupController.cs" />
+    <Compile Include="Controllers\V1\UserRoleController.cs" />
+    <Compile Include="Controllers\V1\ManipulationMobileController.cs" />
+    <Compile Include="Controllers\V1\WorkPermitController.cs" />
+    <Compile Include="Controllers\V1\WorkTicketController.cs" />
+    <Compile Include="Controllers\V1\RegistrationTicketController.cs" />
+    <Compile Include="Controllers\V1\WorkTicketTrackingController.cs" />
+    <Compile Include="Controllers\V2\AbnormalIncidentController.cs" />
+    <Compile Include="Controllers\V2\AiController.cs" />
+    <Compile Include="Controllers\V2\AmDeviceCategoryController.cs" />
+    <Compile Include="Controllers\V2\AmRequestTicketController.cs" />
+    <Compile Include="Controllers\V2\AmDashboardIncidentController.cs" />
+    <Compile Include="Controllers\V2\AssignmentController.cs" />
+    <Compile Include="Controllers\V2\BackupDataController.cs" />
+    <Compile Include="Controllers\V2\DashboardController.cs" />
+    <Compile Include="Controllers\V2\JobHistoryController.cs" />
+    <Compile Include="Controllers\V2\OperationDiaryController.cs" />
+    <Compile Include="Controllers\V2\ReportController.cs" />
+    <Compile Include="Controllers\V2\StatusCategoryController.cs" />
+    <Compile Include="Controllers\V2\BatchETLController.cs" />
+    <Compile Include="Controllers\V2\WidgetController.cs" />
+    <Compile Include="Controllers\V2\WorkScheduleController.cs" />
+    <Compile Include="CustomHeaderModule.cs" />
+    <Compile Include="Filters\AddChallengeOnUnauthorizedResult.cs" />
+    <Compile Include="Filters\AddSwaggerAuthHeaderParameter.cs" />
+    <Compile Include="Filters\AuthenticationFailureResult.cs" />
+    <Compile Include="Filters\CamelCaseIgnoreNullForValueTypesResolver.cs" />
+    <Compile Include="Filters\GlobalExceptionFilterAttribute.cs" />
+    <Compile Include="Filters\HttpAuthenticationChallengeContextExtensions.cs" />
+    <Compile Include="Filters\JwtAuthenticationAttribute.cs" />
+    <Compile Include="Filters\ValidateModelStateFilterAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Jobs\BackupDataJob.cs" />
+    <Compile Include="Jobs\DcsJob.cs" />
+    <Compile Include="Jobs\HistoryCallJob.cs" />
+    <Compile Include="Jobs\OperationParameterWarningJob.cs" />
+    <Compile Include="Jobs\RegistWorkTicketJob.cs" />
+    <Compile Include="Jobs\SendMailReportJob.cs" />
+    <Compile Include="Jobs\AmAutoCompleteJob.cs" />
+    <Compile Include="Jobs\AmCreateJob.cs" />
+    <Compile Include="Jobs\AmNotificationsJob.cs" />
+    <Compile Include="Jobs\MailServicesJob.cs" />
+    <Compile Include="Jobs\DeleteLogFileJob.cs" />
+    <Compile Include="Jobs\JobInitial.cs" />
+    <Compile Include="Jobs\PmisToElogbookJob.cs" />
+    <Compile Include="Jobs\WorkTicketCompletionReminder.cs" />
+    <Compile Include="Jobs\WorkTicketJob.cs" />
+    <Compile Include="Jobs\PmisJob.cs" />
+    <Compile Include="Jobs\ResetTicketNumberJob.cs" />
+    <Compile Include="JwtHandler\JwtManager.cs" />
+    <Compile Include="PermissionAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\Dev\appSettings.config" />
+    <Content Include="Config\Dev\connectionStrings.config" />
+    <Content Include="Config\Dev\log4net.config" />
+    <Content Include="Config\Staging\appSettings.config" />
+    <Content Include="Config\Staging\connectionStrings.config" />
+    <Content Include="Config\Staging\log4net.config" />
+    <Content Include="Config\Prod\appSettings.config" />
+    <Content Include="Config\Prod\connectionStrings.config" />
+    <Content Include="Config\Prod\log4net.config" />
+    <Content Include="CronJobTranslateDescription\netstandard1.1\CronExpressionDescriptor.deps.json" />
+    <Content Include="CronJobTranslateDescription\netstandard2.0\CronExpressionDescriptor.deps.json" />
+    <Content Include="ExcelTemplate\THONG SO GIAN MAY TAI METSO TO MAY H1 COPY EXCEL_2023101800002707.xls" />
+    <Content Include="ExcelTemplate\THONG SO GIAN MAY TAI METSO TO MAY H2 COPY EXCEL_2023101800002708.xls" />
+    <Content Include="ExcelTemplate\THONG SO RUNG DAO TO MAY COPY EXCEL_2023101800002705.xls" />
+    <Content Include="ExcelTemplate\THONG SO VAN HANH THIET BI DIEN TRUNG TAM COPY EXCEL_2023101800002706.xls" />
+    <Content Include="App_Data\database.cache">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\ExportTemplates\Thong So Do Rung - Dao.xls" />
+    <Content Include="App_Data\ExportTemplates\Thong So To May H1.xls" />
+    <Content Include="App_Data\ExportTemplates\Thong So To May H2.xls" />
+    <Content Include="App_Data\ExportTemplates\Thong So Trung Tam.xls" />
+    <Content Include="App_Data\runtime.cache">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\Web_Attachments.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="Template\SCL_Template.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\Bang thong ke so luong bao ban cong tac va dung may.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\Bang thong ke so luong ton tai ca theo thang.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\Bao cao thong so co gia tri vuot nguong.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\Thong ke ton tai ca theo tinh trang xu ly cua cac nha may.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\Thong ke trang thai ca van hanh theo cuong vi.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\TrucCa_08_2026.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\NguoiNgoaiHeThong_Template.xlsx" />
+    <Content Include="Template\PCT_Template.xlsx" />
+    <Content Include="Template\PhieuDK_Dien_Template.xlsx" />
+    <Content Include="Template\PhieuDK_Tcnh_Template.xlsx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Template\SCL_Template.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>SCL_Template.xlsx</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Elogbook.Business\Elogbook.Business.csproj">
+      <Project>{9948bcb3-d9a9-46e8-b844-1f1a5e137824}</Project>
+      <Name>Elogbook.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elogbook.Core\Elogbook.Core.csproj">
+      <Project>{c0b92290-8933-4d08-b4ff-5a0a2da6ae6e}</Project>
+      <Name>Elogbook.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elogbook.Data\Elogbook.Data.csproj">
+      <Project>{a73683c7-6762-4810-af60-d31ad2a09922}</Project>
+      <Name>Elogbook.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elogbook.Domain\Elogbook.Domain.csproj">
+      <Project>{acea7b0b-2054-4645-8afc-01a9f1780ed0}</Project>
+      <Name>Elogbook.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62253</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44385/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <Copy SourceFiles="..\Library\BCrypt.Net-Next.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="..\Library\BCrypt.Net-Next.xml" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

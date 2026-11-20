@@ -1,0 +1,10 @@
+IF NOT EXISTS(SELECT *
+          FROM   INFORMATION_SCHEMA.COLUMNS
+          WHERE  TABLE_NAME = 'IssueOfShiftDetail'
+                 AND COLUMN_NAME = 'AppID')
+BEGIN
+	ALTER TABLE IssueOfShiftDetail ADD AppID NVARCHAR (100) NULL 
+END
+GO
+
+UPDATE AppVersion SET VERSION = '1.1.5'

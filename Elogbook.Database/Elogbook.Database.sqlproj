@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Elogbook.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{98108c19-0b6b-4525-8193-1ef4b5218f30}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Elogbook.Database</RootNamespace>
+    <AssemblyName>Elogbook.Database</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="Storage\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\User Defined Types\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\WorkTicketFeatures.sql" />
+    <Build Include="dbo\Tables\WorkTicketFeatureLink.sql" />
+    <Build Include="dbo\Tables\WorkTicket.sql" />
+    <Build Include="dbo\Tables\WorkPlacement.sql" />
+    <Build Include="dbo\Tables\WorkFinishPicture.sql" />
+    <Build Include="dbo\Tables\WorkFinish.sql" />
+    <Build Include="dbo\Tables\WorkerInformation.sql" />
+    <Build Include="dbo\Tables\WorkDaily.sql" />
+    <Build Include="dbo\Tables\WarnAndSafe.sql" />
+    <Build Include="dbo\Tables\Users.sql" />
+    <Build Include="dbo\Tables\UserRoles.sql" />
+    <Build Include="dbo\Tables\UserPermission.sql" />
+    <Build Include="dbo\Tables\UsedTimes.sql" />
+    <Build Include="dbo\Tables\TrackingSyncMobileData.sql" />
+    <Build Include="dbo\Tables\TimeLineCycle.sql" />
+    <Build Include="dbo\Tables\TicketStatusHistory.sql" />
+    <Build Include="dbo\Tables\TicketStatus.sql" />
+    <Build Include="dbo\Tables\TicketManipulationStatus.sql" />
+    <Build Include="dbo\Tables\Stakeholders.sql" />
+    <Build Include="dbo\Tables\StaffInformation.sql" />
+    <Build Include="dbo\Tables\Signature.sql" />
+    <Build Include="dbo\Tables\SequenceOperationParticipant.sql" />
+    <Build Include="dbo\Tables\SequenceOperation.sql" />
+    <Build Include="dbo\Tables\SafetyMeasure.sql" />
+    <Build Include="dbo\Tables\RoleInUsers.sql" />
+    <Build Include="dbo\Tables\RegistrationTicket.sql" />
+    <Build Include="dbo\Tables\RegistrationManipulationTicket.sql" />
+    <Build Include="dbo\Tables\ReceiveWorkplace.sql" />
+    <Build Include="dbo\Tables\PowerUnit.sql" />
+    <Build Include="dbo\Tables\PositionInShift.sql" />
+    <Build Include="dbo\Tables\Participant.sql" />
+    <Build Include="dbo\Tables\Parameters.sql" />
+    <Build Include="dbo\Tables\ParameterGroup.sql" />
+    <Build Include="dbo\Tables\OtherRequirements.sql" />
+    <Build Include="dbo\Tables\OtherRequest.sql" />
+    <Build Include="dbo\Tables\Organization.sql" />
+    <Build Include="dbo\Tables\OperationTimeLine.sql" />
+    <Build Include="dbo\Tables\OperationSituation.sql" />
+    <Build Include="dbo\Tables\OperationShift.sql" />
+    <Build Include="dbo\Tables\OperationPosition.sql" />
+    <Build Include="dbo\Tables\OperationParameters.sql" />
+    <Build Include="dbo\Tables\OperationDiaryPositionShift.sql" />
+    <Build Include="dbo\Tables\OperationDiary.sql" />
+    <Build Include="dbo\Tables\OperationCrew.sql" />
+    <Build Include="dbo\Tables\Modules.sql" />
+    <Build Include="dbo\Tables\MajorRepair.sql" />
+    <Build Include="dbo\Tables\ManipulationTicket.sql" />
+    <Build Include="dbo\Tables\ManipulationTemplateTickets.sql" />
+    <Build Include="dbo\Tables\LeadershipUser.sql" />
+    <Build Include="dbo\Tables\IssueOfShiftDetail.sql" />
+    <Build Include="dbo\Tables\IdentificationAndSafetyMeasures.sql" />
+    <Build Include="dbo\Tables\GuestUsers.sql" />
+    <Build Include="dbo\Tables\GHI_THONGSO_Temp.sql" />
+    <Build Include="dbo\Tables\Factory.sql" />
+    <Build Include="dbo\Tables\ExistInShift.sql" />
+    <Build Include="dbo\Tables\ExclusiveData.sql" />
+    <Build Include="dbo\Tables\DM_NKVH_Temp.sql" />
+    <Build Include="dbo\Tables\DeliveryShiftMethod.sql" />
+    <Build Include="dbo\Tables\DeliveryReceiveShift.sql" />
+    <Build Include="dbo\Tables\DeliveryAccepDevice.sql" />
+    <Build Include="dbo\Tables\CycleManagement.sql" />
+    <Build Include="dbo\Tables\CycleFactory.sql" />
+    <Build Include="dbo\Tables\ContentPosition.sql" />
+    <Build Include="dbo\Tables\CancelTicketInfo.sql" />
+    <Build Include="dbo\Tables\Attachment.sql" />
+    <Build Include="dbo\Tables\AppVersion.sql" />
+    <Build Include="dbo\Tables\AllowedInfoDetail.sql" />
+    <Build Include="dbo\Tables\AllowedInfo.sql" />
+    <Build Include="dbo\Tables\AlertDetails.sql" />
+    <Build Include="dbo\Tables\AlarmSettings.sql" />
+    <Build Include="dbo\Tables\AbnormalIncident.sql" />
+    <Build Include="dbo\Tables\__MigrationHistory.sql" />
+    <Build Include="dbo\Views\view_Quick_Search_NKVH.sql" />
+    <Build Include="Storage\FG_Elogbook_Q4_2022.sql" />
+    <Build Include="Storage\FG_Elogbook_Q4_2021.sql" />
+    <Build Include="Storage\FG_Elogbook_Q4_2020.sql" />
+    <Build Include="Storage\FG_Elogbook_Q3_2022.sql" />
+    <Build Include="Storage\FG_Elogbook_Q3_2021.sql" />
+    <Build Include="Storage\FG_Elogbook_Q3_2020.sql" />
+    <Build Include="Storage\FG_Elogbook_Q2_2022.sql" />
+    <Build Include="Storage\FG_Elogbook_Q2_2021.sql" />
+    <Build Include="Storage\FG_Elogbook_Q2_2020.sql" />
+    <Build Include="Storage\FG_Elogbook_Q1_2022.sql" />
+    <Build Include="Storage\FG_Elogbook_Q1_2021.sql" />
+    <Build Include="Storage\FG_Elogbook_Q1_2020.sql" />
+    <Build Include="dbo\Stored Procedures\TSVH_UpdateOperationTimeLine.sql" />
+    <Build Include="dbo\Stored Procedures\TSVH_MigrateData.sql" />
+    <Build Include="dbo\Stored Procedures\TSVH_GetValuesForChart.sql" />
+    <Build Include="dbo\Stored Procedures\TSVH_AddOperationParameterByTime.sql" />
+    <Build Include="dbo\Stored Procedures\Quick_Search_NKVH.sql" />
+    <Build Include="dbo\Stored Procedures\NKVH_MigrateData.sql" />
+    <Build Include="Storage\PF_MonthlyPartition.sql" />
+    <Build Include="Storage\PS_MonthWise.sql" />
+    <Build Include="dbo\Stored Procedures\TSVH_GetParameterValuesPrint.sql" />
+    <Build Include="dbo\Stored Procedures\TSVH_SyncDataPMIS.sql" />
+    <Build Include="dbo\Stored Procedures\PCT_ResetTicketNumber.sql" />
+    <Build Include="dbo\Tables\SigningMethod.sql" />
+    <Build Include="dbo\Tables\EmailConfiguration.sql" />
+    <Build Include="dbo\Tables\SystemData.sql" />
+    <Build Include="dbo\Tables\EmailTemplate.sql" />
+    <Build Include="dbo\Tables\Schedule.sql" />
+    <Build Include="dbo\Tables\ActiveDirectory.sql" />
+    <Build Include="dbo\Stored Procedures\TSVH_GetDataForPMIS.sql" />
+    <Build Include="dbo\Tables\StatusCategory.sql" />
+    <Build Include="dbo\Stored Procedures\TSVH_GetParameters.sql" />
+    <Build Include="dbo\Tables\ProbationaryStaff.sql" />
+    <Build Include="dbo\Tables\EmailTransmissions.sql" />
+    <Build Include="dbo\Tables\EmailTransmissionRecipients.sql" />
+    <Build Include="dbo\Tables\TicketEvent.sql" />
+    <Build Include="dbo\Tables\WorkTicketTracking.sql" />
+    <Build Include="dbo\Tables\TrackingStatus.sql" />
+    <Build Include="dbo\Stored Procedures\Search_NKVH.sql" />
+    <Build Include="dbo\Stored Procedures\TSVH_UpdateOperationTimeLinePartial.sql" />
+    <Build Include="dbo\Tables\MajorRepairStatus.sql" />
+    <Build Include="dbo\Tables\MajorRepairExcelDataTemps.sql" />
+    <Build Include="dbo\Stored Procedures\TSVH_UpdateOperationTimeLinePartial.sql" />
+    <Build Include="dbo\Stored Procedures\TSVH_GetParametersGroup.sql" />
+    <Build Include="dbo\Stored Procedures\GetParametersForCycle.sql" />
+    <Build Include="dbo\Tables\ScheduleHistories.sql" />
+    <Build Include="dbo\Stored Procedures\Search_TDTTC.sql" />
+    <Build Include="dbo\Tables\AmDeviceType.sql" />
+    <Build Include="dbo\Tables\AmLocation.sql" />
+    <Build Include="dbo\Tables\AmDevice.sql" />
+    <Build Include="dbo\Tables\AmStatus.sql" />
+    <Build Include="dbo\Tables\AmWorkType.sql" />
+    <Build Include="dbo\Tables\AmWork.sql" />
+    <Build Include="dbo\Tables\AmMaintenanceSchedule.sql" />
+    <Build Include="dbo\Tables\AmMaintenanceWork.sql" />
+    <Build Include="dbo\Tables\AmReasonForPending.sql" />
+    <Build Include="dbo\Tables\AmReasonForStop.sql" />
+    <Build Include="dbo\Tables\AmDeviceAbnormalStatus.sql" />
+    <Build Include="dbo\Tables\AmEmergency.sql" />
+    <Build Include="dbo\Tables\AutonomousMaintenance.sql" />
+    <Build Include="dbo\Tables\AmStopMaintenance.sql" />
+    <Build Include="dbo\Tables\AmWorkPending.sql" />
+    <Build Include="dbo\Tables\AmWorkingProgress.sql" />
+    <Build Include="dbo\Tables\AmWorkDetail.sql" />
+    <Build Include="dbo\Tables\AmRequestTicketStatus.sql" />
+    <Build Include="dbo\Tables\AmRequestTicketHistory.sql" />
+    <Build Include="dbo\Tables\AmRequestTicket.sql" />
+    <Build Include="dbo\Tables\AmDeviceCategory.sql" />
+    <Build Include="dbo\Tables\StepContentSequenceOperation.sql" />
+    <Build Include="dbo\Tables\PMIS_S_SITE.sql" />
+    <Build Include="dbo\Tables\PMIS_S_ORGANIZATION.sql" />
+    <Build Include="dbo\Tables\PMIS_S_COMPANY.sql" />
+    <Build Include="dbo\Tables\PMIS_JOB_HISTORY.sql" />
+    <Build Include="dbo\Tables\PMIS_G_ERP_COUNTRY.sql" />
+    <Build Include="dbo\Tables\PMIS_ASSET_MAINTENANCE.sql" />
+    <Build Include="dbo\Tables\PMIS_A_LST_TYPE.sql" />
+    <Build Include="dbo\Tables\PMIS_A_LST_CATEGORY.sql" />
+    <Build Include="dbo\Tables\PMIS_A_ASSET.sql" />
+    <Build Include="dbo\Tables\AmSupplier.sql" />
+    <Build Include="dbo\Tables\AmReportStatus.sql" />
+    <Build Include="dbo\Tables\AmRelatedInformation.sql" />
+    <Build Include="dbo\Tables\AmManufacturer.sql" />
+    <Build Include="dbo\Tables\AmDeviceStatus.sql" />
+    <Build Include="dbo\Tables\AmCountryManufacture.sql" />
+    <Build Include="dbo\Tables\AbnormalIncidentDetail.sql" />
+    <Build Include="dbo\Stored Procedures\InitialSystemData.sql" />
+    <Build Include="dbo\Tables\TrackingLoginOperation.sql" />
+    <Build Include="dbo\Tables\MajorRepairHistories.sql" />
+    <Build Include="dbo\Tables\TokenExpire.sql" />
+    <Build Include="Security\elogbook.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Tables\HazardsAndSafetyMeasures.sql" />
+    <Build Include="dbo\Tables\AlertNotification.sql" />
+    <Build Include="dbo\Stored Procedures\SYNC_PMIS_AMDEVICECATEGORY.sql" />
+    <Build Include="dbo\Stored Procedures\SYNC_PMIS_AMDEVICE.sql" />
+    <Build Include="dbo\Stored Procedures\SYNC_PMIS_A_LST_CATEGORY.sql" />
+    <Build Include="dbo\Stored Procedures\SYNC_PMIS_A_ASSET_HISTORY.sql" />
+    <Build Include="dbo\Stored Procedures\SYNC_PMIS_A_ASSET.sql" />
+    <Build Include="dbo\User Defined Types\S_COMPANY_TABLE_TYPE.sql" />
+    <Build Include="dbo\User Defined Types\G_ERP_COUNTRY_TABLE_TYPE.sql" />
+    <Build Include="dbo\User Defined Types\A_LST_CATEGORY_TABLE_TYPE.sql" />
+    <Build Include="dbo\User Defined Types\A_ASSET_TABLE_TYPE.sql" />
+    <Build Include="dbo\User Defined Types\A_ASSET_HISTORY_TABLE_TYPE.sql" />
+  </ItemGroup>
+</Project>

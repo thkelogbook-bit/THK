@@ -1,0 +1,164 @@
+﻿namespace Elogbook.Data
+{
+    using Elogbook.Core.Mapper;
+    using Elogbook.Data.DataModels.Base;
+    using System;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
+    [Table("OperationParameters")]
+    public partial class OperationParameters : EntityBase
+    {
+        [Column(TypeName = "bigint")]
+        public new int ID { get; set; }
+
+        [StringLength(100)]
+        public string SyncDataKey { get; set; }
+
+        /// <summary>
+        /// Ngày đồng bộ cuối
+        /// </summary>
+        public DateTime SyncedDate { get; set; } = DateTime.Now;
+
+        /// <summary>
+        /// App ID
+        /// </summary>
+        [StringLength(100)]
+        public string AppID { get; set; }
+
+        /// <summary>
+        /// Tên thông số
+        /// </summary>
+        [StringLength(255)]
+        [Required(AllowEmptyStrings = true)]
+        public string ParameterName { get; set; }
+
+        /// <summary>
+        /// Thông số ID
+        /// </summary>
+        public int ParameterID { get; set; }
+
+        /// <summary>
+        /// Nhóm thông số
+        /// </summary>
+        public int? ParameterGroupID { get; set; }
+        [MapperIgnore]
+        [ForeignKey(nameof(ParameterGroupID))]
+        public virtual ParameterGroup ParameterGroup { get; set; }
+
+        /// <summary>
+        /// Khung giờ
+        /// </summary>
+        public int? OperationTimeLineID { get; set; }
+        [MapperIgnore]
+        [ForeignKey(nameof(OperationTimeLineID))]
+        public virtual OperationTimeLine OperationTimeLine { get; set; }
+
+        /// <summary>
+        /// Nhà máy
+        /// </summary>
+        public int FactoryID { get; set; }
+
+        [MapperIgnore]
+        [ForeignKey(nameof(FactoryID))]
+        public virtual Factory Factory { get; set; }
+
+        /// <summary>
+        /// Cương vị
+        /// </summary>
+        public int? OperationPositionID { get; set; }
+
+        [MapperIgnore]
+        [ForeignKey(nameof(OperationPositionID))]
+        public virtual OperationPosition OperationPosition { get; set; }
+
+        /// <summary>
+        /// Chu kỳ
+        /// </summary>
+        public int? CycleID { get; set; }
+        [MapperIgnore]
+        [ForeignKey(nameof(CycleID))]
+        public virtual CycleManagement Cycle { get; set; }
+
+        /// <summary>
+        /// Giá trị được ghi
+        /// </summary>
+        public string CurrentValue { get; set; }
+
+        /// <summary>
+        /// Mã KKS
+        /// </summary>
+        [StringLength(255)]
+        public string KKSCode { get; set; }
+
+        /// <summary>
+        /// Đơn vị đo
+        /// </summary>
+        [StringLength(255)]
+        public string UnitMeasure { get; set; }
+
+        /// <summary>
+        /// Setting
+        /// </summary>
+        public string Setting { get; set; }
+
+        /// <summary>
+        /// Giới hạn giá trị (từ)
+        /// </summary>
+        public float? FromRange { get; set; }
+
+        /// <summary>
+        /// Giới hạn giá trị (đến)
+        /// </summary>
+        public float? ToRange { get; set; }
+
+        /// <summary>
+        /// Kiểu dữ liệu
+        /// </summary>
+        public bool IsNumberType { get; set; }
+
+        /// <summary>
+        /// Giới trị trước đó
+        /// </summary>
+        public string PreviousValue { get; set; }
+
+        /// <summary>
+        /// Mã lỗi
+        /// </summary>
+        public int? ErrorCode { get; set; }
+
+        /// <summary>
+        /// Đã được ghi
+        /// </summary>
+        public bool IsChecked { get; set; }
+
+        /// <summary>
+        /// Ngày cập nhật dữ liệu
+        /// </summary>
+        public DateTime? CheckedDate { get; set; }
+
+        /// <summary>
+        /// Danh sách cảnh báo
+        /// </summary>
+        public string AlertDetails { get; set; }
+
+        /// <summary>
+        /// Người tạo
+        /// </summary>
+        [MapperIgnore]
+        [ForeignKey(nameof(CreatedUserID))]
+        public virtual User CreatedUser { get; set; }
+
+        /// <summary>
+        /// Người cập nhật
+        /// </summary>
+        [MapperIgnore]
+        [ForeignKey(nameof(LastUpdatedUserID))]
+        public virtual User LastUpdatedUser { get; set; }
+
+        /// <summary>
+        /// Tên column trên file ai excel, dùng để mapping Parameter với column name trên file excel
+        /// </summary>
+        public int? ExcelAIColIndex { get; set; }
+    }
+}

@@ -1,0 +1,56 @@
+--12052022
+IF NOT EXISTS(SELECT *
+          FROM   INFORMATION_SCHEMA.COLUMNS
+          WHERE  TABLE_NAME = 'TrackingSyncMobileData'
+                 AND COLUMN_NAME = 'SyncDataModule')
+BEGIN
+	ALTER TABLE TrackingSyncMobileData ADD SyncDataModule DATETIME NOT NULL DEFAULT(GETDATE())
+END
+
+IF EXISTS(SELECT *
+          FROM   INFORMATION_SCHEMA.COLUMNS
+          WHERE  TABLE_NAME = 'WorkTicket'
+                 AND COLUMN_NAME = 'ApprovedDate')
+BEGIN
+	ALTER TABLE WorkTicket ALTER COLUMN ApprovedDate DATETIME NULL
+END
+
+IF EXISTS(SELECT *
+          FROM   INFORMATION_SCHEMA.COLUMNS
+          WHERE  TABLE_NAME = 'WorkPlacement'
+                 AND COLUMN_NAME = 'StartTime')
+BEGIN
+	ALTER TABLE WorkPlacement ALTER COLUMN StartTime DATETIME NULL
+END
+
+IF EXISTS(SELECT *
+          FROM   INFORMATION_SCHEMA.COLUMNS
+          WHERE  TABLE_NAME = 'WorkPlacement'
+                 AND COLUMN_NAME = 'EndTime')
+BEGIN
+	ALTER TABLE WorkPlacement ALTER COLUMN EndTime DATETIME NULL
+END
+
+IF EXISTS(SELECT *
+          FROM   INFORMATION_SCHEMA.COLUMNS
+          WHERE  TABLE_NAME = 'WorkFinish'
+                 AND COLUMN_NAME = 'ReturnWorkplaceTime')
+BEGIN
+	ALTER TABLE WorkFinish ALTER COLUMN ReturnWorkplaceTime DATETIME NULL
+END
+
+IF EXISTS(SELECT *
+          FROM   INFORMATION_SCHEMA.COLUMNS
+          WHERE  TABLE_NAME = 'WorkFinish'
+                 AND COLUMN_NAME = 'CheckCompletedTime')
+BEGIN
+	ALTER TABLE WorkFinish ALTER COLUMN CheckCompletedTime DATETIME NULL
+END
+
+IF EXISTS(SELECT *
+          FROM   INFORMATION_SCHEMA.COLUMNS
+          WHERE  TABLE_NAME = 'WorkFinish'
+                 AND COLUMN_NAME = 'CheckReceivedTime')
+BEGIN
+	ALTER TABLE WorkFinish ALTER COLUMN CheckReceivedTime DATETIME NULL
+END

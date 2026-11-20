@@ -1,0 +1,2 @@
+﻿CREATE USER [elogbook] WITHOUT LOGIN;
+

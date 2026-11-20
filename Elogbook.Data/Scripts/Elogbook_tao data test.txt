@@ -1,0 +1,101 @@
+Add Ca
+{
+  "operationShiftName": "Ca sáng",
+  "position": 1,
+  "factoryID": 1,
+  "startTime": "8:00",
+  "endTime": "16:00",
+  "active": 1
+}
+
+Add kíp
+{
+  "factoryID": 1,
+  "operationCrewName": "Kíp vận hành ca sáng",
+  "active": 1
+}
+
+Add cương vị
+{
+  "factoryID": 1,
+  "operationPositionName": "Bảng điện GT1,2,3,4,8 + ST10",
+  "active": 1,
+  "quantity": 1,
+  "athenticationType": 1,
+  "isUsingOnlyOneTablet": true,
+  "allowWriteDiaryPortal": true,
+  "allowWriteDiaryMobile": true,
+  "allowWriteParameterPortal": true,
+  "allowWriteParameterMobile": true,
+  "jobTitle": 3,
+}
+
+Add Ca vận hành
+{
+  "factoryID": 1,
+  "operationPositionID": 3,
+  "createdDate": "2021-12-20T04:57:49.574Z",
+  "operationShiftID": 3,
+  "operationCrewID": 1,
+  "operationDiaryPositionShift": [
+    {
+      "positionInShiftID": 1,
+      "label": "Trưởng ca",
+      "assignedUserID": 1,
+      "isDefault": true,
+      "position": 1
+    },
+{
+      "positionInShiftID": 2,
+      "label": "Trưởng kíp",
+      "assignedUserID": 2,
+      "isDefault": true,
+      "position": 2
+    },
+{
+      "positionInShiftID": 3,
+      "label": "Bảng điện GT1,2,3,4,8 + ST10",
+      "assignedUserID": 1,
+      "isDefault": true,
+      "position": 3
+    }
+  ]
+}
+
+Ghi NKVH
+{
+  "operationDiaryID": 1,
+  "operationSituation": {
+    "id": 0,
+    "hour": "12:53",
+    "assignedFromID": 1,
+    "assignedFromName": "",
+    "assignedToID": 2,
+    "description": "ghi tình hình vận hành lần 3"
+  },
+  "abnormalIncident": "Bất thường sự cố (cập nhật)",
+  "deliveryShiftMethod": "Phương thức giao ca (cập nhật)",
+  "existInShift": {
+    "id": 0,
+    "registrationTicketID": 0,
+    "registrationTicketName": "PCT/Kiểm tra máy phát điện",
+    "teamLeader": "Đào Ngọc Thành",
+    "area": "Vị trí máy điện",
+    "content": "Kiểm tra vì sao máy không hoạt động"
+  },
+  "comments": "Thông tin nhật ký vận hành chưa rõ ràng, cần cập nhật thêm (cập nhật)",
+  "deliveryReceiveShifts": [
+    {
+      "id": 0,
+      "leaderShiftID": 0,
+      "leaderCrewID": 0,
+      "isDeliveryShift": true,
+      "leaderShiftSignatureAttchmentID": 0,
+      "leaderCrewSignatureAttchmentID": 0
+    }
+  ],
+  "tabIndex": 5,
+  "deliveryShiftTime": "2021-12-22T04:57:49.578Z"
+}
+
+Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InRoYW5oZG4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3VzZXJkYXRhIjoiPD94bWwgdmVyc2lvbj1cIjEuMFwiIGVuY29kaW5nPVwidXRmLTE2XCI_PlxyXG48Q3VzdG9tSWRlbnRpdHkgeG1sbnM6eHNpPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2VcIiB4bWxuczp4c2Q9XCJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYVwiPlxyXG4gIDxJRD4xPC9JRD5cclxuICA8VXNlcm5hbWU-dGhhbmhkbjwvVXNlcm5hbWU-XHJcbiAgPEZ1bGxOYW1lPsSQw6BvIE5n4buNYyBUaMOgbmg8L0Z1bGxOYW1lPlxyXG4gIDxDb21wYW55SUQ-MjwvQ29tcGFueUlEPlxyXG4gIDxQcm9kdWN0aW9uUGxhbnRJRD4zPC9Qcm9kdWN0aW9uUGxhbnRJRD5cclxuPC9DdXN0b21JZGVudGl0eT4iLCJuYmYiOjE2NDAxODEyMTMsImV4cCI6MTY0MDIxNzIxMywiaWF0IjoxNjQwMTgxMjEzfQ.oYkimvB4lU_mIoRb9VKU__mAwxU8tWHSHrLM3fzgOoM

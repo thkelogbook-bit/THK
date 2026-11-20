@@ -1,0 +1,3 @@
+﻿ALTER DATABASE [$(DatabaseName)]
+    ADD FILEGROUP [FG_Elogbook_Q3_2020];
+
