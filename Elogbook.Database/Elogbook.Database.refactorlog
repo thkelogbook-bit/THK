@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="c62ccb71-8c29-4ddd-905e-2de754dfa42d" ChangeDateTime="12/18/2023 11:08:06">
+    <Property Name="ElementName" Value="[dbo].[WorkTicketTracking].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[WorkTicketTracking]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9ecc4877-7b18-4a18-a18a-441086ad8ffd" ChangeDateTime="12/18/2023 12:25:25">
+    <Property Name="ElementName" Value="[dbo].[WorkTicketTracking].[Status]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[WorkTicketTracking]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TrackingStatusID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="745b2dbb-0d66-4aec-b52f-3f4b962fd790" ChangeDateTime="12/23/2023 14:52:45">
+    <Property Name="ElementName" Value="[dbo].[MajorRepair].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[MajorRepair]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID" />
+  </Operation>
+</Operations>

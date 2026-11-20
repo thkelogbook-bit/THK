@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DEMO_FULL_CA_DOTNET_WEB.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DEMO_FULL_CA_DOTNET_WEB_MobileCAWS_APWsImplService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://171.244.149.211:8080/apws.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

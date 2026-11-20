@@ -1,0 +1,113 @@
+﻿using Elogbook.Core.Models;
+using Elogbook.Core.Models.Request;
+using Elogbook.Core.Models.Response;
+using System.Collections.Generic;
+
+namespace Elogbook.Core.Interfaces.Business
+{
+    /// <summary>
+    /// Định nghĩa các phương thức
+    /// </summary>
+    public interface IAmDeviceBusiness
+    {
+        /// <summary>
+        /// Tìm kiếm theo điều kiện
+        /// </summary>
+        /// <param name="requestModel"></param>
+        /// <returns></returns>
+        ResponseBaseModel GetDevices(AmDeviceSearchModel requestModel);
+
+        /// <summary>
+        /// Tìm kiếm theo id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        ResponseModel<AmDeviceModel> GetDeviceById(int id);
+
+        /// <summary>
+        /// Thêm mới
+        /// </summary>
+        /// <param name="requestModel"></param>
+        /// <returns></returns>
+        ResponseModel<bool> CreateDevice(AmDeviceAddEditModel requestModel);
+
+        /// <summary>
+        /// Cập nhật
+        /// </summary>
+        /// <param name="requestModel"></param>
+        /// <returns></returns>
+        ResponseModel<bool> UpdateDevice(AmDeviceAddEditModel requestModel);
+
+        /// <summary>
+        /// Xóa
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="userID"></param>
+        /// <returns></returns>
+        ResponseBaseModel DeleteDevice(int id, int userID);
+
+        /// <summary>
+        /// Đồng bộ Pmis
+        /// </summary>
+        /// <returns></returns>
+        ResponseBaseModel SyncDataPmis();
+
+
+        /// <summary>
+        /// Danh sách thiết bị cha theo khu vực
+        /// </summary>
+        /// <param name="locationID"></param>
+        /// <returns></returns>
+        List<ComboboxDataModel> GetDeviceByLocationID(int locationID);
+
+        /// <summary>
+        /// Danh sách Thiết bị cha
+        /// </summary>
+        /// <param name="locationID"></param>
+        /// <param name="deviceTypeID"></param>
+        /// <returns></returns>
+        List<ComboboxDataModel> GetParent(int locationID, int deviceTypeID);
+        
+        
+        /// <summary>
+        /// Tìm kiếm nhanh thiết bị
+        /// </summary>
+        /// <param name="requestModel"></param>
+        /// <returns></returns>
+        ResponseBaseModel QuickSearchDevices(AmDeviceQuickSearchModel requestModel);
+
+        /// <summary>
+        /// Tìm kiếm thiết bị theo cấu trúc phân cấp
+        /// </summary>
+        /// <param name="requestModel"></param>
+        /// <returns></returns>
+        ResponseBaseModel GetDevicesHierarchy(AmDeviceSearchModel requestModel);
+
+        /// <summary>
+        /// Tìm kiếm thiết bị cha cao nhất
+        /// </summary>
+        /// <param name="requestModel"></param>
+        /// <returns></returns>
+        ResponseBaseModel GetRootDevices(AmDeviceSearchModel requestModel);
+
+        /// <summary>
+        /// Lấy cây phân cấp khu vực - thiết bị
+        /// </summary>
+        /// <returns></returns>
+        ResponseModel<List<BaseHierachyModel>> GetLocationDeviceHierarchy();
+
+        /// <summary>
+        /// Thay đổi parent của Device hoặc Location
+        /// </summary>
+        /// <param name="requestModel"></param>
+        /// <returns></returns>
+        ResponseBaseModel ChangeParent(ChangeParentLocationModel requestModel);
+
+        /// <summary>
+        /// Lấy danh sách thiết bị con
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        ResponseModel<List<AmDeviceModel>> GetDeviceChildren(int id);
+    }
+}

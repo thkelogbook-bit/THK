@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A73683C7-6762-4810-AF60-D31AD2A09922}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Elogbook.Data</RootNamespace>
+    <AssemblyName>Elogbook.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.9.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.9.1\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.System.Runtime">
+      <HintPath>..\Library\Core.System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.DynamicFilters, Version=3.0.1.0, Culture=neutral, PublicKeyToken=59b66d028979105b, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.DynamicFilters.3.0.1\lib\net40\EntityFramework.DynamicFilters.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context\PmisSyncRepository.cs" />
+    <Compile Include="Context\PmisSyncDataContext.cs" />
+    <Compile Include="Context\PmisRepository.cs" />
+    <Compile Include="Context\ElogbookUnitOfWork.cs" />
+    <Compile Include="Context\ElogbookRepository.cs" />
+    <Compile Include="Context\PmisDataContext.cs" />
+    <Compile Include="Context\PmisSyncUnitOfWork.cs" />
+    <Compile Include="Context\PmisUnitOfWork.cs" />
+    <Compile Include="DataModels\Base\EntityBase.cs" />
+    <Compile Include="Context\ElogbookDataContext.cs" />
+    <Compile Include="DataModels\Base\PmisSyncEntityBase.cs" />
+    <Compile Include="DataModels\Base\PmisEntityBase.cs" />
+    <Compile Include="DataModels\Entities\ActiveDirectory\ActiveDirectory.cs" />
+    <Compile Include="DataModels\Entities\AbnormalIncident\AbnormalIncidentDetail.cs" />
+    <Compile Include="DataModels\Entities\AbnormalIncident\StatusCategory.cs" />
+    <Compile Include="DataModels\Entities\Ai\ConfigurationWarning.cs" />
+    <Compile Include="DataModels\Entities\Ai\ConfigurationWarningRule.cs" />
+    <Compile Include="DataModels\Entities\AlertNotification\AlertNotification.cs" />
+    <Compile Include="DataModels\Entities\AmDeviceCategory\AmDeviceCategory.cs" />
+    <Compile Include="DataModels\Entities\AmCountryManufacture\AmCountryManufacture.cs" />
+    <Compile Include="DataModels\Entities\AmDevice\AmDeviceStatus.cs" />
+    <Compile Include="DataModels\Entities\AmManufacturer\AmManufacturer.cs" />
+    <Compile Include="DataModels\Entities\AmSupplier\AmSupplier.cs" />
+    <Compile Include="DataModels\Entities\Asset\PMIS_JOB_HISTORY.cs" />
+    <Compile Include="DataModels\Entities\Asset\PMIS_A_ASSET.cs" />
+    <Compile Include="DataModels\Entities\Asset\PMIS_A_LST_CATEGORY.cs" />
+    <Compile Include="DataModels\Entities\Asset\PMIS_A_LST_TYPE.cs" />
+    <Compile Include="DataModels\Entities\Asset\PMIS_ASSET_MAINTENANCE.cs" />
+    <Compile Include="DataModels\Entities\Asset\PMIS_G_ERP_COUNTRY.cs" />
+    <Compile Include="DataModels\Entities\Asset\PMIS_S_COMPANY.cs" />
+    <Compile Include="DataModels\Entities\Asset\PMIS_S_SITE.cs" />
+    <Compile Include="DataModels\Entities\Asset\PMIS_S_ORGANIZATION.cs" />
+    <Compile Include="DataModels\Entities\AmEmergency\AmEmergency.cs" />
+    <Compile Include="DataModels\Entities\AmDeviceAbnormalStatus\AmDeviceAbnormalStatus.cs" />
+    <Compile Include="DataModels\Entities\Assignment\AssignmentEmployee.cs" />
+    <Compile Include="DataModels\Entities\Assignment\AssignmentEmployeeHistory.cs" />
+    <Compile Include="DataModels\Entities\Assignment\AssignmentSlot.cs" />
+    <Compile Include="DataModels\Entities\AutonomousMaintenance\AmReportStatus.cs" />
+    <Compile Include="DataModels\Entities\AutonomousMaintenance\AmStopMaintenance.cs" />
+    <Compile Include="DataModels\Entities\AutonomousMaintenance\AmWorkPending.cs" />
+    <Compile Include="DataModels\Entities\AutonomousMaintenance\AmWorkDetail.cs" />
+    <Compile Include="DataModels\Entities\AutonomousMaintenance\AmWorkingProgress.cs" />
+    <Compile Include="DataModels\Entities\AutonomousMaintenance\AutonomousMaintenance.cs" />
+    <Compile Include="DataModels\Entities\AmRequestTicket\AmRequestTicket.cs" />
+    <Compile Include="DataModels\Entities\AmRequestTicket\AmRequestTicketHistory.cs" />
+    <Compile Include="DataModels\Entities\AmRequestTicket\AmRequestTicketStatus.cs" />
+    <Compile Include="DataModels\Entities\AMStatus\AmStatus.cs" />
+    <Compile Include="DataModels\Entities\AmDevice\AmDevice.cs" />
+    <Compile Include="DataModels\Entities\AmDeviceType\AmDeviceType.cs" />
+    <Compile Include="DataModels\Entities\AMLocation\AmLocation.cs" />
+    <Compile Include="DataModels\Entities\AmMaintenanceSchedule\AmMaintenanceSchedule.cs" />
+    <Compile Include="DataModels\Entities\AmMaintenanceSchedule\AmMaintenanceWork.cs" />
+    <Compile Include="DataModels\Entities\AmReasonForPending\AmReasonForPending.cs" />
+    <Compile Include="DataModels\Entities\AmReasonForStop\AmReasonForStop.cs" />
+    <Compile Include="DataModels\Entities\AmWorkType\AmWorkType.cs" />
+    <Compile Include="DataModels\Entities\AmWork\AmWork.cs" />
+    <Compile Include="DataModels\Entities\Attachment\Attachment.cs" />
+    <Compile Include="DataModels\Entities\AutonomousMaintenance\TrackingLoginOperation.cs" />
+    <Compile Include="DataModels\Entities\BackupData\BackupData.cs" />
+    <Compile Include="DataModels\Entities\BatchWorkReg\BatchWorkReg.cs" />
+    <Compile Include="DataModels\Entities\BatchWorkReg\BatchWorkRegHistory.cs" />
+    <Compile Include="DataModels\Entities\BatchWorkReg\BatchWorkRegStatus.cs" />
+    <Compile Include="DataModels\Entities\BatchWorkReg\BatchWorkRegTemp.cs" />
+    <Compile Include="DataModels\Entities\CycleManagement\CycleFactory.cs" />
+    <Compile Include="DataModels\Entities\CycleManagement\CycleManagement.cs" />
+    <Compile Include="DataModels\Entities\CycleManagement\TimeLineCycle.cs" />
+    <Compile Include="DataModels\Entities\Dashboard\DashboardModule.cs" />
+    <Compile Include="DataModels\Entities\EmailNotification\Schedule.cs" />
+    <Compile Include="DataModels\Entities\EmailNotification\EmailTemplate.cs" />
+    <Compile Include="DataModels\Entities\EmailNotification\EmailConfiguration.cs" />
+    <Compile Include="DataModels\Entities\InspectionReport\InspectionReport.cs" />
+    <Compile Include="DataModels\Entities\InspectionReport\RelatedUser.cs" />
+    <Compile Include="DataModels\Entities\KnowledgeBase\KnowledgeBase.cs" />
+    <Compile Include="DataModels\Entities\OperationDiary\ActiveWork.cs" />
+    <Compile Include="DataModels\Entities\OperationDiary\ExportOperationDiary.cs" />
+    <Compile Include="DataModels\Entities\OperationParamaters\OperationParametersArchive.cs" />
+    <Compile Include="DataModels\Entities\RegistrationTicket\HazardsAndSafetyMeasures.cs" />
+    <Compile Include="DataModels\Entities\Report\Report.cs" />
+    <Compile Include="DataModels\Entities\Report\ReportWidgetType.cs" />
+    <Compile Include="DataModels\Entities\Sla\SlaCategory.cs" />
+    <Compile Include="DataModels\Entities\Sla\SlaCondition.cs" />
+    <Compile Include="DataModels\Entities\Sla\SlaConfig.cs" />
+    <Compile Include="DataModels\Entities\Sla\SlaLevel.cs" />
+    <Compile Include="DataModels\Entities\Sla\SlaLevelRole.cs" />
+    <Compile Include="DataModels\Entities\Sla\SlaLevelUserGroup.cs" />
+    <Compile Include="DataModels\Entities\Sla\SlaRole.cs" />
+    <Compile Include="DataModels\Entities\SystemConfiguration\SystemConfiguration.cs" />
+    <Compile Include="DataModels\Entities\TokenExpire.cs" />
+    <Compile Include="DataModels\Entities\PasswordReset\PasswordResetOtp.cs" />
+    <Compile Include="DataModels\Entities\PasswordReset\ResetSessionToken.cs" />
+    <Compile Include="DataModels\Entities\MajorRepair\MajorRepairHistory.cs" />
+    <Compile Include="DataModels\Entities\MajorRepair\MajorRepairStatus.cs" />
+    <Compile Include="DataModels\Entities\Pmis\A_LST_CATEGORY.cs" />
+    <Compile Include="DataModels\Entities\Pmis\A_ASSET.cs" />
+    <Compile Include="DataModels\Entities\Pmis\A_LST_TYPE.cs" />
+    <Compile Include="DataModels\Entities\Pmis\G_ERP_COUNTRY.cs" />
+    <Compile Include="DataModels\Entities\Pmis\S_COMPANY.cs" />
+    <Compile Include="DataModels\Entities\Pmis\S_SITE.cs" />
+    <Compile Include="DataModels\Entities\Pmis\S_ORGANIZATION.cs" />
+    <Compile Include="DataModels\Entities\Pmis\TrackingSyncPmisData.cs" />
+    <Compile Include="DataModels\Entities\ScheduleHistory.cs" />
+    <Compile Include="DataModels\Entities\MajorRepair\MajorRepairExcelDataTemp.cs" />
+    <Compile Include="DataModels\Entities\Pmis\OP_METER_TAB_TEST.cs" />
+    <Compile Include="DataModels\Entities\MailService\EmailTransmissions.cs" />
+    <Compile Include="DataModels\Entities\MailService\EmailTransmissionRecipients.cs" />
+    <Compile Include="DataModels\Entities\MajorRepair\MajorRepair.cs" />
+    <Compile Include="DataModels\Entities\OperationDiary\ProbationaryStaff.cs" />
+    <Compile Include="DataModels\Entities\SystemData.cs" />
+    <Compile Include="DataModels\Entities\ExclusiveData.cs" />
+    <Compile Include="DataModels\Entities\Factory\Factory.cs" />
+    <Compile Include="DataModels\Entities\IssueOfShift\IssueOfShiftDetail.cs" />
+    <Compile Include="DataModels\Entities\ManipulationTicket\CancelTicketInfo.cs" />
+    <Compile Include="DataModels\Entities\ManipulationTicket\DeliveryAccepDevice.cs" />
+    <Compile Include="DataModels\Entities\ManipulationTicket\ManipulationTemplateTicket.cs" />
+    <Compile Include="DataModels\Entities\ManipulationTicket\ManipulationTicket.cs" />
+    <Compile Include="DataModels\Entities\ManipulationTicket\OtherRequest.cs" />
+    <Compile Include="DataModels\Entities\ManipulationTicket\Participant.cs" />
+    <Compile Include="DataModels\Entities\ManipulationTicket\RegistrationManipulationTicket.cs" />
+    <Compile Include="DataModels\Entities\ManipulationTicket\SequenceOperation.cs" />
+    <Compile Include="DataModels\Entities\ManipulationTicket\SequenceOperationParticipant.cs" />
+    <Compile Include="DataModels\Entities\OpeartionShift\OperationShift.cs" />
+    <Compile Include="DataModels\Entities\OpeartionShift\UsedTimes.cs" />
+    <Compile Include="DataModels\Entities\OperationCrew\OperationCrew.cs" />
+    <Compile Include="DataModels\Entities\OperationDiary\AbnormalIncident.cs" />
+    <Compile Include="DataModels\Entities\OperationDiary\DeliveryReceiveShift.cs" />
+    <Compile Include="DataModels\Entities\OperationDiary\DeliveryShiftMethod.cs" />
+    <Compile Include="DataModels\Entities\OperationDiary\ExistInShift.cs" />
+    <Compile Include="DataModels\Entities\OperationDiary\OperationDiary.cs" />
+    <Compile Include="DataModels\Entities\OperationDiary\OperationDiaryPositionShift.cs" />
+    <Compile Include="DataModels\Entities\OperationDiary\OperationSituation.cs" />
+    <Compile Include="DataModels\Entities\OperationParamaters\OperationParameters.cs" />
+    <Compile Include="DataModels\Entities\OperationParamaters\OperationTimeLine.cs" />
+    <Compile Include="DataModels\Entities\OperationPosition\OperationPosition.cs" />
+    <Compile Include="DataModels\Entities\OperationPosition\PositionInShift.cs" />
+    <Compile Include="DataModels\Entities\Organization\Organization.cs" />
+    <Compile Include="DataModels\Entities\Parameter\AlarmSetting.cs" />
+    <Compile Include="DataModels\Entities\Parameter\AlertDetail.cs" />
+    <Compile Include="DataModels\Entities\Parameter\Parameter.cs" />
+    <Compile Include="DataModels\Entities\Parameter\ParameterGroup.cs" />
+    <Compile Include="DataModels\Entities\Pmis\OP_METER_TAB_DT.cs" />
+    <Compile Include="DataModels\Entities\Pmis\OP_METER_TAB.cs" />
+    <Compile Include="DataModels\Entities\Pmis\A_METER.cs" />
+    <Compile Include="DataModels\Entities\Pmis\A_ASSET_METER_DYN.cs" />
+    <Compile Include="DataModels\Entities\PowerUnit\PowerUnit.cs" />
+    <Compile Include="DataModels\Entities\RegistrationTicket\ContentPosition.cs" />
+    <Compile Include="DataModels\Entities\RegistrationTicket\IdentificationAndSafetyMeasures.cs" />
+    <Compile Include="DataModels\Entities\RegistrationTicket\OtherRequirements.cs" />
+    <Compile Include="DataModels\Entities\RegistrationTicket\RegistrationTicket.cs" />
+    <Compile Include="DataModels\Entities\RegistrationTicket\Stakeholders.cs" />
+    <Compile Include="DataModels\Entities\RegistrationTicket\TicketStatus.cs" />
+    <Compile Include="DataModels\Entities\Signature.cs" />
+    <Compile Include="DataModels\Entities\Synchronization\TrackingSyncMobileData.cs" />
+    <Compile Include="DataModels\Entities\ManipulationTicket\TicketManipulationStatus.cs" />
+    <Compile Include="DataModels\Entities\SystemConfiguration\AppVersion.cs" />
+    <Compile Include="DataModels\Entities\SystemConfiguration\SigningMethod.cs" />
+    <Compile Include="DataModels\Entities\UserGroup\UserGroup.cs" />
+    <Compile Include="DataModels\Entities\UserGroup\UserInGroup.cs" />
+    <Compile Include="DataModels\Entities\UserRole\Modules.cs" />
+    <Compile Include="DataModels\Entities\UserRole\UserPermission.cs" />
+    <Compile Include="DataModels\Entities\UserRole\UserRole.cs" />
+    <Compile Include="DataModels\Entities\Users\GuestUser.cs" />
+    <Compile Include="DataModels\Entities\Users\RoleInUser.cs" />
+    <Compile Include="DataModels\Entities\Users\User.cs" />
+    <Compile Include="DataModels\Entities\Widget\Widget.cs" />
+    <Compile Include="DataModels\Entities\WorkPermit\LctAllowedInfo.cs" />
+    <Compile Include="DataModels\Entities\WorkPermit\LctAllowedInfoDetail.cs" />
+    <Compile Include="DataModels\Entities\WorkPermit\LctContentPosition.cs" />
+    <Compile Include="DataModels\Entities\WorkPermit\LctEmployeeByWorkUnit.cs" />
+    <Compile Include="DataModels\Entities\WorkPermit\LctIdentificationAndSafetyMeasures.cs" />
+    <Compile Include="DataModels\Entities\WorkPermit\LctLeadershipUser.cs" />
+    <Compile Include="DataModels\Entities\WorkPermit\LctOtherRequirements.cs" />
+    <Compile Include="DataModels\Entities\WorkPermit\LctReceiveWorkplace.cs" />
+    <Compile Include="DataModels\Entities\WorkPermit\LctRegistrationTicket.cs" />
+    <Compile Include="DataModels\Entities\WorkPermit\LctSafetyMeasure.cs" />
+    <Compile Include="DataModels\Entities\WorkPermit\LctStaffInformation.cs" />
+    <Compile Include="DataModels\Entities\WorkPermit\LctStakeholders.cs" />
+    <Compile Include="DataModels\Entities\WorkPermit\LctTicketStatus.cs" />
+    <Compile Include="DataModels\Entities\WorkPermit\LctTicketStatusHistory.cs" />
+    <Compile Include="DataModels\Entities\WorkPermit\LctWarnAndSafe.cs" />
+    <Compile Include="DataModels\Entities\WorkPermit\LctWorkDaily.cs" />
+    <Compile Include="DataModels\Entities\WorkPermit\LctWorkDailyInfo.cs" />
+    <Compile Include="DataModels\Entities\WorkPermit\LctWorkerInformation.cs" />
+    <Compile Include="DataModels\Entities\WorkPermit\LctWorkFinish.cs" />
+    <Compile Include="DataModels\Entities\WorkPermit\LctWorkFinishPicture.cs" />
+    <Compile Include="DataModels\Entities\WorkPermit\LctWorkPlacement.cs" />
+    <Compile Include="DataModels\Entities\WorkPermit\LctWorkTicket.cs" />
+    <Compile Include="DataModels\Entities\WorkPermit\LctWorkTicketFeatureLink.cs" />
+    <Compile Include="DataModels\Entities\WorkPermit\LctWorkTicketFeatures.cs" />
+    <Compile Include="DataModels\Entities\WorkSchedule\HolidaySchedule.cs" />
+    <Compile Include="DataModels\Entities\WorkSchedule\WorkSchedule.cs" />
+    <Compile Include="DataModels\Entities\WorkSchedule\WorkScheduleBreak.cs" />
+    <Compile Include="DataModels\Entities\WorkSchedule\WorkScheduleDay.cs" />
+    <Compile Include="DataModels\Entities\WorkSchedule\WorkScheduleDayBreak.cs" />
+    <Compile Include="DataModels\Entities\WorkTicket\AllowedInfo.cs" />
+    <Compile Include="DataModels\Entities\WorkTicket\AllowedInfoDetail.cs" />
+    <Compile Include="DataModels\Entities\WorkTicket\ReceiveWorkplace.cs" />
+    <Compile Include="DataModels\Entities\WorkTicket\SafetyMeasure.cs" />
+    <Compile Include="DataModels\Entities\WorkTicket\StaffInformation.cs" />
+    <Compile Include="DataModels\Entities\WorkTicket\TicketEvent.cs" />
+    <Compile Include="DataModels\Entities\WorkTicket\TrackingStatus.cs" />
+    <Compile Include="DataModels\Entities\WorkTicket\WarnAndSafe.cs" />
+    <Compile Include="DataModels\Entities\WorkTicket\WorkDaily.cs" />
+    <Compile Include="DataModels\Entities\WorkTicket\WorkFinish.cs" />
+    <Compile Include="DataModels\Entities\WorkTicket\LeadershipUser.cs" />
+    <Compile Include="DataModels\Entities\WorkTicket\WorkFinishPicture.cs" />
+    <Compile Include="DataModels\Entities\WorkTicket\WorkPlacement.cs" />
+    <Compile Include="DataModels\Entities\WorkTicket\TicketStatusHistory.cs" />
+    <Compile Include="DataModels\Entities\WorkTicket\WorkerInformation.cs" />
+    <Compile Include="DataModels\Entities\WorkTicket\WorkTicket.cs" />
+    <Compile Include="DataModels\Entities\WorkTicket\WorkTicketFeatureLink.cs" />
+    <Compile Include="DataModels\Entities\WorkTicket\WorkTicketFeatures.cs" />
+    <Compile Include="DataModels\Entities\WorkTicket\WorkTicketTracking.cs" />
+    <Compile Include="Migrations\202204011523195_Initial.cs" />
+    <Compile Include="Migrations\202204011523195_Initial.Designer.cs">
+      <DependentUpon>202204011523195_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204030754052_Update.cs" />
+    <Compile Include="Migrations\202204030754052_Update.Designer.cs">
+      <DependentUpon>202204030754052_Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204121622480_AppVersion.cs" />
+    <Compile Include="Migrations\202204121622480_AppVersion.Designer.cs">
+      <DependentUpon>202204121622480_AppVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204161904429_SyncOffline.cs" />
+    <Compile Include="Migrations\202204161904429_SyncOffline.Designer.cs">
+      <DependentUpon>202204161904429_SyncOffline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterModule\DataModule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\AmInitialData.sql" />
+    <Content Include="Scripts\AM_CreateTable.sql" />
+    <Content Include="Scripts\Elogbook_tao data test.txt" />
+    <Content Include="Scripts\Migration_PhuMy.sql" />
+    <Content Include="Scripts\RequiredDataBeforeRunApplication.sql" />
+    <Content Include="Scripts\NKVH.sql" />
+    <Content Include="Scripts\Stored Procedures\Quick_Search_NKVH.sql" />
+    <Content Include="Scripts\Stored Procedures\TSVH_UpdateOperationTimeLinePartial.sql" />
+    <Content Include="Scripts\Stored Procedures\TSVH_GetParametersGroup.sql" />
+    <Content Include="Scripts\Stored Procedures\TSVH_GetValuesForChart.sql" />
+    <Content Include="Scripts\Tracking Database Change\01_Phase2_Upgrade_20231109.sql" />
+    <Content Include="Scripts\Tracking Database Change\Upgrade database_20240104.sql" />
+    <Content Include="Scripts\Tracking Database Change\01_Upgrade database_20231231.sql" />
+    <Content Include="Scripts\Tracking Database Change\01_Upgrade_28042022.sql" />
+    <Content Include="Scripts\Tracking Database Change\02_Upgrade_06052022.sql" />
+    <Content Include="Scripts\Tracking Database Change\03_Upgrade_10052022_SQL2016.sql" />
+    <Content Include="Scripts\Tracking Database Change\03_Upgrade_10052022_SQL2019.sql" />
+    <Content Include="Scripts\Tracking Database Change\04_Upgrade_12052022.sql" />
+    <Content Include="Scripts\Tracking Database Change\05_Upgrade_16052022.sql" />
+    <Content Include="Scripts\Tracking Database Change\06_Upgrade_23052022.sql" />
+    <Content Include="Scripts\Tracking Database Change\07_Upgrade_29052022.sql" />
+    <Content Include="Scripts\Tracking Database Change\08_Upgrade_08062022.sql" />
+    <Content Include="Scripts\Tracking Database Change\09_Upgrade_20062022.sql" />
+    <Content Include="Scripts\Tracking Database Change\10_Upgrade_07072022.sql" />
+    <Content Include="Scripts\Tracking Database Change\11_Upgrade_18072022.sql" />
+    <Content Include="Scripts\Tracking Database Change\12_Upgrade_31072022.sql" />
+    <Content Include="Scripts\Tracking Database Change\DONGBO_TSVH_ELOGBOOK_PMIS.sql" />
+    <Content Include="Scripts\Tracking Database Change\Initdata_Phase2.sql" />
+    <Content Include="Scripts\Tracking Database Change\ResetTicketNumber.sql" />
+    <Content Include="Scripts\Tracking Database Change\ResetTicketNumber_ExclusiveData.sql" />
+    <Content Include="Scripts\Tracking Database Change\Upgrade database_20231122.sql" />
+    <Content Include="Scripts\Tracking Database Change\Upgrade database_20231212.sql" />
+    <Content Include="Scripts\Tracking Database Change\Upgrade database_20240115.sql" />
+    <Content Include="Scripts\Tracking Database Change\Upgrade_PasswordResetOtp_20260707.sql" />
+    <Content Include="Scripts\Tracking Database Change\Upgrade database_SCL.sql" />
+    <Content Include="Scripts\Tracking Database Change\Upgrade Final.sql" />
+    <Content Include="Scripts\Views\view_Quick_Search_NKVH.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202204011523195_Initial.resx">
+      <DependentUpon>202204011523195_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204030754052_Update.resx">
+      <DependentUpon>202204030754052_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204121622480_AppVersion.resx">
+      <DependentUpon>202204121622480_AppVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204161904429_SyncOffline.resx">
+      <DependentUpon>202204161904429_SyncOffline.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Elogbook.Core\Elogbook.Core.csproj">
+      <Project>{c0b92290-8933-4d08-b4ff-5a0a2da6ae6e}</Project>
+      <Name>Elogbook.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

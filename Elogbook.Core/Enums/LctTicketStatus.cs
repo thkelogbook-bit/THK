@@ -1,0 +1,59 @@
+﻿
+
+using System.ComponentModel;
+
+namespace Elogbook.Core.Enums
+{
+    /// <summary>
+    /// Trạng thái lệnh công tác
+    /// </summary>
+    public enum  LctTicketStatus
+    {
+
+        /// <summary>
+        /// Chưa gửi lệnh đăng ký
+        /// </summary>
+        [Description("Chưa gửi lệnh đăng ký")]
+        Unsent = 1,
+        /// <summary>
+        /// Chờ cấp lệnh công tác
+        /// </summary>
+        [Description("Chờ cấp lệnh công tác")]
+        Waiting,
+        /// <summary>
+        /// Đã thu hồi
+        /// </summary>
+        [Description("Đã thu hồi")]
+        Cancel,
+        /// <summary>
+        /// Không được cấp phiếu
+        /// </summary>
+        [Description("Không được cấp lệnh")]
+        Reject,
+        /// <summary>
+        /// Đã cấp lệnh đk phiếu công tác
+        /// </summary>
+        [Description("Đã cấp lệnh")]
+        ApprovedRegister,
+        /// <summary>
+        /// Đã cấp lệnh
+        /// </summary>
+        [Description("Đã cấp lệnh")]
+        Approved,
+        /// <summary>
+        /// Đang thực hiện công tác
+        /// </summary>
+        [Description("Đang thực hiện")]
+        InProgress,
+        /// <summary>
+        /// Chờ xác nhận hoàn thành
+        /// </summary>
+        [Description("Chờ xác nhận hoàn thành")]
+        WaitForConfirmation,
+        /// <summary>
+        /// Đã hoàn thành
+        /// </summary>
+        [Description("Đã hoàn thành")]
+        Completed,
+    }
+}

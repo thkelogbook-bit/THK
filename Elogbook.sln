@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31229.75
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elogbook.Business", "Elogbook.Business\Elogbook.Business.csproj", "{9948BCB3-D9A9-46E8-B844-1F1A5E137824}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elogbook.Api", "Elogbook.Api\Elogbook.Api.csproj", "{F4F3F4CD-9C54-4C8C-BA5D-CA1CAF67D93D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elogbook.Core", "Elogbook.Core\Elogbook.Core.csproj", "{C0B92290-8933-4D08-B4FF-5A0A2DA6AE6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elogbook.Data", "Elogbook.Data\Elogbook.Data.csproj", "{A73683C7-6762-4810-AF60-D31AD2A09922}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elogbook.Domain", "Elogbook.Domain\Elogbook.Domain.csproj", "{ACEA7B0B-2054-4645-8AFC-01A9F1780ED0}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Elogbook.Database", "Elogbook.Database\Elogbook.Database.sqlproj", "{98108C19-0B6B-4525-8193-1EF4B5218F30}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9948BCB3-D9A9-46E8-B844-1F1A5E137824}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9948BCB3-D9A9-46E8-B844-1F1A5E137824}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9948BCB3-D9A9-46E8-B844-1F1A5E137824}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9948BCB3-D9A9-46E8-B844-1F1A5E137824}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4F3F4CD-9C54-4C8C-BA5D-CA1CAF67D93D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4F3F4CD-9C54-4C8C-BA5D-CA1CAF67D93D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4F3F4CD-9C54-4C8C-BA5D-CA1CAF67D93D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4F3F4CD-9C54-4C8C-BA5D-CA1CAF67D93D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0B92290-8933-4D08-B4FF-5A0A2DA6AE6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0B92290-8933-4D08-B4FF-5A0A2DA6AE6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0B92290-8933-4D08-B4FF-5A0A2DA6AE6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0B92290-8933-4D08-B4FF-5A0A2DA6AE6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A73683C7-6762-4810-AF60-D31AD2A09922}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A73683C7-6762-4810-AF60-D31AD2A09922}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A73683C7-6762-4810-AF60-D31AD2A09922}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A73683C7-6762-4810-AF60-D31AD2A09922}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACEA7B0B-2054-4645-8AFC-01A9F1780ED0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACEA7B0B-2054-4645-8AFC-01A9F1780ED0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACEA7B0B-2054-4645-8AFC-01A9F1780ED0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACEA7B0B-2054-4645-8AFC-01A9F1780ED0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98108C19-0B6B-4525-8193-1EF4B5218F30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98108C19-0B6B-4525-8193-1EF4B5218F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98108C19-0B6B-4525-8193-1EF4B5218F30}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{98108C19-0B6B-4525-8193-1EF4B5218F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98108C19-0B6B-4525-8193-1EF4B5218F30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98108C19-0B6B-4525-8193-1EF4B5218F30}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BD39FCBA-97F6-4FFC-A8B0-F7AA145DEF90}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,23 @@
+﻿CREATE TYPE [dbo].[S_COMPANY_TABLE_TYPE] AS TABLE (
+    [COMPID]            NVARCHAR (25)   NOT NULL,
+    [COMPDESC]          NVARCHAR (255)  NOT NULL,
+    [ADDRESS]           NVARCHAR (255)  NULL,
+    [EMAIL]             NVARCHAR (50)   NULL,
+    [TEL]               NVARCHAR (50)   NULL,
+    [FAX]               NVARCHAR (50)   NULL,
+    [NOTE]              NVARCHAR (2000) NULL,
+    [COMPID_PARENT]     NVARCHAR (25)   NULL,
+    [ORGID]             NVARCHAR (25)   NULL,
+    [TYPEIDLIST]        NVARCHAR (1000) NULL,
+    [HOMEPAGE]          NVARCHAR (255)  NULL,
+    [USER_CREATE_ID]    NVARCHAR (25)   NULL,
+    [USER_CREATE_DTIME] DATETIME        NULL,
+    [USER_MODIFY_ID]    NVARCHAR (25)   NULL,
+    [USER_MODIFY_DTIME] DATETIME        NULL,
+    [ACTIVE]            BIT             NULL,
+    [MUCDICH_SD_TROXI]  NVARCHAR (MAX)  NULL,
+    [JobId]             INT             NULL,
+    [IsDeleted]         BIT             NULL,
+    [InsertedAt]        DATETIME        NULL,
+    [UpdatedAt]         DATETIME        NULL);
+
